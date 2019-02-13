@@ -7,6 +7,10 @@ qemu-img create -b /var/lib/libvirt/images/node.qcow2  -f qcow2  /var/lib/libvir
 
 cp node.xml  /etc/libvirt/qemu/$A.xml
 cp vbr.xml  /etc/libvirt/qemu/networks/vbr.xml
+#
+virsh net-define  /etc/libvirt/qemu/networks/vbr.xml
+virsh net-start vbr
+virsh net-autostart vbr
 
 sed -i  "2s/node/$A/" /etc/libvirt/qemu/$A.xml
 sed -i  "26s/node.img/$A.img/" /etc/libvirt/qemu/$A.xml
