@@ -2,7 +2,7 @@
 
 read -p "虚拟机名字:"  A
 
-#根据原始盘创建磁盘文件
+#根据原始盘创建磁盘文件,原始盘在README.txt
 qemu-img create -b /var/lib/libvirt/images/node.qcow2  -f qcow2  /var/lib/libvirt/images/$A.img  20G    
 
 \cp node.xml  /etc/libvirt/qemu/$A.xml
