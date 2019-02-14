@@ -3,4 +3,5 @@
 虚拟机环境文件(虚拟交换机):vbr.xml
 
 原始盘链接:链接: https://pan.baidu.com/s/1uuIiTAB7RTCudstusXTz-g 提取码: weix 
-将下载到的node.qcow2 原始盘文件 放在/var/lib/libvirt/images/  目录下
+将下载到的node.qcow2 原始盘文件 放在/var/lib/libvirt/images/  目录下             
+openstack.sh是openstack安装脚本，需要在建好的虚拟机上运行
