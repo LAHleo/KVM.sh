@@ -39,6 +39,7 @@ echo "nameserver $C" > /etc/resolv.conf
 
 #设置主机名
 echo "$D"  > /etc/hostname
+hostname $D
 
 #配置yum源
 rm -rf /etc/yum.repos.d/*
