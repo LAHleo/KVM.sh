@@ -142,7 +142,8 @@ fi
 #############################################################
 echo "下面安装依赖包"
 sleep 3
-yum install -y   qemu-kvm       libvirt-daemon       libvirt-client         libvirt-daemon-driver-qemu     python-setuptools  openstack-packstack
+yum install -y   qemu-kvm       libvirt-daemon       libvirt-client         libvirt-daemon-driver-qemu  \
+python-setuptools openstack-utils   openstack-packstack
 #编写应答文件
 packstack --gen-answer-file  answer.txt
 sed -i "42c CONFIG_SWIFT_INSTALL=n"   answer.txt
