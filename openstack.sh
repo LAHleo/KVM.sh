@@ -102,6 +102,7 @@ name=haha38
 baseurl=ftp://192.168.1.254/RHEL7-OSP-10/rhel-7-server-openstack-10-rpms
 enabled=1
 gpgcheck=0
+
 [RHEL7-OSP-109]
 name=haha39
 baseurl=ftp://192.168.1.254/RHEL7-OSP-10/rhel-7-server-openstack-10-tools-rpms
@@ -131,7 +132,8 @@ ifconfig eth0 | head -2
 echo ""
 ifconfig eth1 | head -2
 echo "DNS:"  && cat /etc/resolv.conf
-
+echo -e "\033[33m内存大小\033[0m" && cat /proc/meminfo | head -1
+echo -e "\033[33m磁盘情况\033[0m" && df -hT | grep  /dev/vda1
 read -p "请确认是否正确『y/n』"  E
 
 if [ $E != y ];then
