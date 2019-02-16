@@ -41,6 +41,9 @@ echo "nameserver $C" > /etc/resolv.conf
 echo "$D"  > /etc/hostname
 hostname $D
 
+#NTP
+sed -i "4c server 192.168.1.254 iburst"   /etc/chrony.conf
+systemctl restart chronyd
 #配置yum源
 rm -rf /etc/yum.repos.d/*
 echo "
@@ -143,8 +146,7 @@ fi
 #############################################################
 echo "下面安装依赖包"
 sleep 3
-yum install -y   qemu-kvm       libvirt-daemon       libvirt-client         libvirt-daemon-driver-qemu  \
-python-setuptools openstack-utils   openstack-packstack
+yum install -y   qemu-kvm       libvirt-daemon       libvirt-client         libvirt-daemon-driver-qemu  python-setuptools openstack-utils   openstack-packstack
 #编写应答文件
 packstack --gen-answer-file  answer.txt
 sed -i "42c CONFIG_SWIFT_INSTALL=n"   answer.txt
