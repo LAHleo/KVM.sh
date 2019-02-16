@@ -44,5 +44,6 @@ systemctl enable openstack-nova-compute.service
 虚拟机openstack：
 应答文件：
 98   CONFIG_COMPUTE_HOSTS=192.168.1.11，+nova01的ip
+
 102 CONFIG_NETWORK_HOSTS=192.168.1.11，+nova01的ip
 命令： packstack --answer-file=answer.txt      
